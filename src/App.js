@@ -6,13 +6,14 @@ import Testimonia from './Page/Testimonias/Testimonia';
 import Topbar from './Page/TobBar/Topbar';
 import Works from './Page/Works/Works';
 import './App.scss'
+import Menu from './Page/menu/menu';
 
 const App = () => {
 const [menuOpen, setMenuOpen] = useState(false)
   return ( <div className='app'>
   <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+  <Menu/>
   <div className="sections">
-  bruhssssssssssss
     <Intro/>
     <Portfilio/>
     <Works/>
