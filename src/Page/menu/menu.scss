@@ -20,11 +20,20 @@
         background-color: $mainColor;
     }
      ul{
-         li{
-             a{
+        color: white;
+        font-weight: 300;
+        font-size: 30px;
+        width: 60%;
 
+         li{
+             margin-bottom: 20px;
+             a{
                  text-decoration: none;
-                 color: white;
+                 font-size: inherit;
+                 color: inherit;
+             }
+             &:hover{
+                 font-weight: 500;
              }
          }
      }
