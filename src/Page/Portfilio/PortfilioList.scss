@@ -1,0 +1,13 @@
+@import '../../MainColors.scss';
+
+.portfilioList{
+    font-size: 14px;
+    margin-right: 50px;
+    cursor: pointer;
+    padding: 7px;
+    &.active{
+        background-color: $mainColor;
+        color: white;
+        border-radius: 10px;
+    }
+}
