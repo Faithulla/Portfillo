@@ -1,14 +1,37 @@
 import './Porfilio.scss'
+import PortfilioList from './PortfilioList'
 export default function Portfilio() {
+    const list = [
+        {
+           id:'features',
+           tittle:'Features'         
+        },
+        {
+           id:'web',
+           tittle:'Web App'         
+        },
+        {
+           id:'mobile',
+           tittle:'Mobile App'         
+        },
+        {
+           id:'design',
+           tittle:'Design'         
+        },
+        {
+           id:'branding',
+           tittle:'Branding'         
+        }
+    ]
     return (
         <div className='Portfilio' id='portfilio'>
             <h1>Portfilio</h1>
             <ul>
-                <li className='active'>Featured</li>
-                <li>Web App</li>
-                <li>Mobile App</li>
-                <li>Design</li>
-                <li>Branding</li>
+                {
+                    list.map(item => (
+                        <PortfilioList tittle={item.tittle}/>
+                     ))
+                }
             </ul>
             <div className="container">
                 <div className="item" >
