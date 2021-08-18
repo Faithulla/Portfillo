@@ -1,3 +1,70 @@
+@import '../../MainColors.scss';
+
 .Portfilio{
-    background-color: lightskyblue;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+        font-size: 50px;
+    }
+    ul{
+        margin: 10px;
+        display: flex;
+        padding: 0;
+        list-style: none;
+
+        li{
+            font-size: 14px;
+            margin-right: 50px;
+            padding: 7px;
+            &.active{
+                background-color: $mainColor;
+                color: white;
+                border-radius: 10px;
+            }
+        }
+    }
+    .container{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .item{
+            width: 220px;
+            height: 150px;
+            border-radius: 20px;
+            border: 1px solid lightgray;
+            margin: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            transition: all 1s ease;
+
+            h3{
+                position: absolute;
+                font-size: 20px;
+                z-index: 1;
+            }
+            img{
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                z-index: 0;
+            }
+            &:hover{
+                background-color: $mainColor;
+                img{
+                    z-index: 0;
+                    opacity: 0.2;
+                }
+                
+            }
+        }
+    }
 }
