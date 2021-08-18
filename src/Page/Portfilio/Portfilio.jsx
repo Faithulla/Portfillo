@@ -1,9 +1,17 @@
 import "./Porfilio.scss";
-import PortfilioList from "./PortfilioList";
-import { useState } from "react";
+import PortfilioList from "../../Components/PortfilioList";
+import { useState, useEffect } from "react";
+import {
+    featuredPortfolio,
+    webPortfolio,
+    mobilePortfolio,
+    designPortfolio,
+    contentPortfolio,
+  } from "../../data";
 export default function Portfilio() {
 
     const [selected, setSelected] = useState("featured");
+    const [data, setData] = useState([])
 
   const list = [
     {
@@ -27,6 +35,27 @@ export default function Portfilio() {
       title: "Branding",
     },
   ];
+  useEffect(() => {
+    switch (selected) {
+      case "featured":
+        setData(featuredPortfolio);
+        break;
+      case "web":
+        setData(webPortfolio);
+        break;
+      case "mobile":
+        setData(mobilePortfolio);
+        break;
+      case "design":
+        setData(designPortfolio);
+        break;
+      case "content":
+        setData(contentPortfolio);
+        break;
+      default:
+        setData(featuredPortfolio);
+    }
+  }, [selected]);
   return (
     <div className="Portfilio" id="portfilio">
       <h1>Portfilio</h1>
@@ -41,48 +70,12 @@ export default function Portfilio() {
         ))}
       </ul>
       <div className="container">
-        <div className="item">
-          <img
-            src="https://cdn.dribbble.com/users/2768987/screenshots/14668214/media/5c145c66d071199cb0a745c7983519d3.png?compress=1&resize=1600x1200"
-            alt=""
-          />
-          <h3>Ranking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://cdn.dribbble.com/users/2768987/screenshots/14668214/media/5c145c66d071199cb0a745c7983519d3.png?compress=1&resize=1600x1200"
-            alt=""
-          />
-          <h3>Ranking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://cdn.dribbble.com/users/2768987/screenshots/14668214/media/5c145c66d071199cb0a745c7983519d3.png?compress=1&resize=1600x1200"
-            alt=""
-          />
-          <h3>Ranking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://cdn.dribbble.com/users/2768987/screenshots/14668214/media/5c145c66d071199cb0a745c7983519d3.png?compress=1&resize=1600x1200"
-            alt=""
-          />
-          <h3>Ranking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://cdn.dribbble.com/users/2768987/screenshots/14668214/media/5c145c66d071199cb0a745c7983519d3.png?compress=1&resize=1600x1200"
-            alt=""
-          />
-          <h3>Ranking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://cdn.dribbble.com/users/2768987/screenshots/14668214/media/5c145c66d071199cb0a745c7983519d3.png?compress=1&resize=1600x1200"
-            alt=""
-          />
-          <h3>Ranking App</h3>
-        </div>
+       {data.map((d )=> (
+           <div className="item">
+               <img src={d.img} alt="" />
+               <h3>{d.title}</h3>
+           </div>
+       ))}
       </div>
     </div>
   );
