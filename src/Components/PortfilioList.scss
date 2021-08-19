@@ -1,10 +1,13 @@
-@import '../MainColors.scss';
+@import '../Global.scss';
 
 .portfilioList{
     font-size: 14px;
     margin-right: 50px;
     cursor: pointer;
     padding: 7px;
+    @include mobile{
+        margin-right: 20px;
+    }
     &.active{
         background-color: $mainColor;
         color: white;

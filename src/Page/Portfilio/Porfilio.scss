@@ -1,4 +1,4 @@
-@import '../../MainColors.scss';
+@import '../../Global.scss';
 
 .Portfilio {
     background-color: #fff;
@@ -8,6 +8,9 @@
 
     h1 {
         font-size: 50px;
+        @include mobile {
+            font-size: 20px;
+        }
     }
 
     ul {
@@ -15,6 +18,13 @@
         display: flex;
         padding: 0;
         list-style: none;
+        @include mobile {
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px 0;
+            width: 80%;
+
+        }
 
 
     }
@@ -25,6 +35,9 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        @include mobile {
+            width: 100%;
+        }
 
         .item {
             width: 220px;
@@ -38,6 +51,11 @@
             color: white;
             position: relative;
             transition: all 1s ease;
+            cursor: pointer;
+            @include mobile {
+                width: 130px;
+                height: 100px;
+            }
 
             h3 {
                 position: absolute;
