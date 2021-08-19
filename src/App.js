@@ -9,6 +9,7 @@ import "./App.scss";
 import Menu from "./Page/menu/menu";
 
 const App = () => {
+
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="app">
@@ -16,7 +17,7 @@ const App = () => {
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="sections">
         <Intro />
-        <Portfilio />
+        `<Portfilio/>`
         <Works />
         <Testimonia />
         <Contact />
