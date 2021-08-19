@@ -1,5 +1,3 @@
-import Banner from '../../Assets/Img/Banner.svg'
-import DownArrow from '../../Assets/Img/Down-arrow.png'
 import { init } from 'ityped'
 import { useEffect, useRef } from 'react'
 
@@ -21,7 +19,7 @@ export default function Intro() {
         <div className='Intro' id='intro'>
             <div className="left">
                 <div className="imgContainer">
-                <img src={Banner} alt="" />
+                <img src='assets/Banner.svg' alt="" />
                 </div>
             </div>
             <div className="right">
@@ -31,7 +29,7 @@ export default function Intro() {
                 <h3>I`m a <span ref={textRef}></span></h3>
                 </div>
                 <a href="#portfilio">
-                    <img className='arrows' src={DownArrow} alt="" />
+                    <img className='arrows' src='assets/Down-arrow.png' alt="" />
                 </a>
             </div>
         </div>
